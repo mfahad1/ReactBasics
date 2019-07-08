@@ -5,9 +5,9 @@ Main types of components in React are
 ## 1) Stateless Component
 
 These components are just like a plain JS function but will always return JSX or null.
-Doesn't any state or lifecycle hooks.
+Doesn't have any state or lifecycle hooks.
 cannot manage state.
-Takes props as the parameter that can be decontructed to be used further in the function
+Takes props as the parameter that can be deconstructed to be used further in the function
 
 ## 2) Stateful Component
 
