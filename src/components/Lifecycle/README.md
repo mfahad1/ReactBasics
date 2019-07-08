@@ -26,5 +26,8 @@ it's re-rendered, and allows you to return any values you might need to know fro
 #### componentDidUpdate(prevProps, prevState, snapshot)
  This method is not called for the initial render. is used to work with revious props.
 
+## Unmounting
+#### componentWillUnmount()
+When leaving the component like when in navigation the dom of component will unmount itself. It is useful to clear all subscriptions.
 
 ![alt text](componentLifeCycle.png)

@@ -1,9 +1,9 @@
 import React from 'react';
 
-class Layout extends React.Component {
+class Lifecycle extends React.Component {
 
   state = {
-    counter: 0
+    counter: 0,
   };
   constructor(props) {
     super(props);
@@ -37,7 +37,7 @@ class Layout extends React.Component {
     return (
       <div>
         <h1>Lifecycle of a Component</h1>
-        <h2  id='counterDiv' >
+        <h2  id='counter-div' >
           Final Counter : {this.state.counter}
         </h2>
 
@@ -50,7 +50,7 @@ class Layout extends React.Component {
 
   getSnapshotBeforeUpdate(prevProps, prevState) {
     console.log("getSnapshotBeforeUpdate()");
-    console.log("ref to previous dom: ", document.getElementById('counterDiv').innerHTML);
+    console.log("ref to previous dom: ", document.getElementById('counter-div').innerHTML);
     console.log('*******************');
     return {
       counter: prevState.counter + 1,
@@ -67,4 +67,4 @@ class Layout extends React.Component {
 
 }
 
-export default Layout;
+export default Lifecycle;
