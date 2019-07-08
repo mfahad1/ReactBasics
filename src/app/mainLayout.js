@@ -2,31 +2,29 @@ import React from 'react';
 import './mainLayout.css';
 import SideNavbar from './components/SideNavbar';
 import { HashRouter as Router, Switch, Route } from 'react-router-dom'
+import MovieList from './movies/movie-list';
 
 
 class MainLayout extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      activeRoute: 'movies'
-    };
+
   }
 
-  setActiveRoute() {
-    
+  
+  setMyFavirouteMovies =(movies) => {
   }
 
-  // render method here...
 
   render() {
     return (
-      <div className="container">    
+      <div className="layout-container">    
         <Router>
           <SideNavbar />
           <Switch>
-            <Route exact path="/" component={() => <div>Home</div>}/>
-            <Route path="/my-fav" component={() => <div>Fav</div>} />
-            <Route component={() => <div>NotFound</div>}/>
+            <Route exact path="/" component={() => <MovieList setMyFavirouteMovies={this.setMyFavirouteMovies}/>} />
+            <Route path="/my-fav" component={() => {}} />
+            <Route component={() => <div>NotFound</div>} />
           </Switch>
         </Router>
       </div>
