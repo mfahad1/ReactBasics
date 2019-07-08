@@ -1,7 +1,11 @@
+.layout-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
 .sidenav {
   height: 100%;
   width: 0;
-  position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
