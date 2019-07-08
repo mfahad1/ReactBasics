@@ -1,5 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux'
 import './movies.css';
+import { favMovieAction } from '../redux/actionsAndReducer/add-fav';
 
 
 class MovieList extends React.Component {
@@ -35,7 +37,7 @@ class MovieList extends React.Component {
       shallowCopyMovies[indexOfMovie].liked = !shallowCopyMovies[indexOfMovie].liked;
       this.setState({
         movies: shallowCopyMovies
-      });
+      }, () => this.props.favMovieDispatch(this.state.movies.filter(movie => movie.liked)));
     }
 
     return this.state.movies.map((movie, index) => {
@@ -65,4 +67,15 @@ class MovieList extends React.Component {
     )
   }
 }
-export default MovieList;
+
+const mapStateToProps = (state, ownProps) => ({
+})
+
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  favMovieDispatch: (movies) => dispatch(favMovieAction(movies))
+})
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MovieList)
