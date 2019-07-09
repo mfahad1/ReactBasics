@@ -35,6 +35,14 @@ const moviesReducer = (state = { movies: defaultMovies, favMovies: [] }, action)
         favMovies:  state.movies.filter(movie => movie.liked)
       })
 
+    case 'ADD_MOVIE':
+      return Object.assign({}, state, {
+        movies:  state.movies.concat({
+          name: action.value,
+          liked: false
+        })
+      })
+
     default:
       return state
   }

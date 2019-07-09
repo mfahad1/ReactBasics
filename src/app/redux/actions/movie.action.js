@@ -12,8 +12,14 @@ const fetchFavoriteMoviesAction = (index) => ({
   index: index
 })
 
+const addMovieAction = (value) => ({
+  type: 'ADD_MOVIE',
+  value: value
+})
+
 export {
   fetchMoviesAction,
   likeMovieAction,
-  fetchFavoriteMoviesAction
+  fetchFavoriteMoviesAction,
+  addMovieAction
 }

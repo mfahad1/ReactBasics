@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import './movies.css';
-import { fetchMoviesAction, likeMovieAction } from '../redux/actions/movie.action';
+import { fetchMoviesAction, likeMovieAction, addMovieAction } from '../redux/actions/movie.action';
 
 
 class MovieList extends React.Component {
@@ -9,7 +9,7 @@ class MovieList extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      
+      inputMovie: ''
     }
   }
 
@@ -39,6 +39,25 @@ class MovieList extends React.Component {
         <h1>
           Movie List
         </h1>
+
+        <div className="input-group mb-3">
+          <input 
+            type="text" 
+            className="form-control" 
+            placeholder="Enter Movie Name"
+            value={this.state.inputMovie}
+            onChange={(e) => this.setState({ inputMovie: e.target.value })}
+          />
+          <div className="input-group-append">
+            <button 
+              type="button" 
+              className="btn btn-info" 
+              onClick={() => this.props.addMovieAction(this.state.inputMovie)}>
+              Add
+            </button>
+          </div>
+        </div>
+
         <ul className="list-group">
           {this.renderMovies()}
         </ul>
@@ -54,6 +73,7 @@ const mapStateToProps = (state, ownProps) => ({
 const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchMoviesAction: () => dispatch(fetchMoviesAction()),
   likeMovieAction: (id) => dispatch(likeMovieAction(id)),
+  addMovieAction: (value) => dispatch(addMovieAction(value))
 })
 
 export default connect(
