@@ -4,9 +4,9 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import Layout from './components/Lifecycle/Lifecycle';
-import CounterCaller from './components/ComponentsType/stateless';
-import StatefulComponent from './components/ComponentsType/stateful';
+import Layout from './componentsBasics/Lifecycle/Lifecycle';
+import CounterCaller from './componentsBasics/ComponentsType/stateless';
+import StatefulComponent from './componentsBasics/ComponentsType/stateful';
 import MainLayout from './app/mainLayout';
 import { Provider } from 'react-redux'
 import store from './app/redux/store';
