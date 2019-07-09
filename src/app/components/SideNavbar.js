@@ -8,7 +8,7 @@ const SideNavbar = (selected) => {
    
     <div className="sidenav">
       <NavLink exact={true} activeClassName='is-active' to='/'>Movies</NavLink>
-      <NavLink activeClassName='is-active' to='/my-fav'>My Favourite</NavLink>
+      <NavLink activeClassName='is-active' to='/my-fav'>My Favorite</NavLink>
     </div>
 
   );

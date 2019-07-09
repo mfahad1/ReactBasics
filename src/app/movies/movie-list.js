@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import './movies.css';
-import { fetchMoviesAction, likeMovieAction } from '../redux/actionsAndReducer/add-fav';
+import { fetchMoviesAction, likeMovieAction } from '../redux/actions/movie.action';
 
 
 class MovieList extends React.Component {
@@ -48,7 +48,7 @@ class MovieList extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-  movies: state.favMovieReducer.movies
+  movies: state.moviesReducer.movies
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

@@ -1,8 +1,8 @@
 import { combineReducers, createStore } from 'redux'
-import { favMovieReducer } from '../actionsAndReducer/add-fav'
+import moviesReducer from '../reducers/movie.reducer'
 
 const combinedReducer = combineReducers({
-  favMovieReducer
+  moviesReducer
 });
 
 const store = createStore(combinedReducer);

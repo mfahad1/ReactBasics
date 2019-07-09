@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { favMovieAction } from '../redux/actionsAndReducer/add-fav';
+import { fetchFavoriteMoviesAction } from '../redux/actions/movie.action';
 
 
-class FavouriteMovieList extends React.Component {
+class FavoriteMovieList extends React.Component {
 
   constructor(props) {
     super(props)
@@ -23,7 +23,7 @@ class FavouriteMovieList extends React.Component {
   }
 
   componentDidMount() {
-    this.props.favMovieAction();
+    this.props.fetchFavoriteMoviesAction();
   }
   
 
@@ -32,7 +32,7 @@ class FavouriteMovieList extends React.Component {
     return (
       <div className="container">
         <h1>
-          Movie List
+          Favorite List
         </h1>
         <ul className="list-group">
           {this.renderMovies()}
@@ -45,15 +45,15 @@ class FavouriteMovieList extends React.Component {
 const mapStateToProps = (state) => {
   console.log(state);
   return {
-    favMovies: state.favMovieReducer.favMovies
+    favMovies: state.moviesReducer.favMovies
   }
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  favMovieAction: () => dispatch(favMovieAction())
+  fetchFavoriteMoviesAction: () => dispatch(fetchFavoriteMoviesAction())
 })
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(FavouriteMovieList)
+)(FavoriteMovieList)
