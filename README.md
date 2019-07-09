@@ -9,3 +9,5 @@ We will go through with some basics of
 2) [Lifecycle of a Component](src/componentsBasics/lifecycle/README.md) 
 
 3) A simple [Demo](src/app/README.md) of Movie List covering redux and react router
+
+![ajK3GL](https://i.makeagif.com/media/7-09-2019/ajK3GL.gif)
