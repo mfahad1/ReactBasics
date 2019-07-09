@@ -1,3 +1,10 @@
+# Setup for React Router
+
+ npm install react-router-dom
+
+ Switch vs Router
+ HashRouter
+
 # Setup for Reducer
 
 1) npm install --save redux
