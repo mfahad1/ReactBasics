@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
+import { favMovieAction } from '../redux/actionsAndReducer/add-fav';
 
 
 class FavouriteMovieList extends React.Component {
@@ -20,6 +21,11 @@ class FavouriteMovieList extends React.Component {
       );
     });
   }
+
+  componentDidMount() {
+    this.props.favMovieAction();
+  }
+  
 
 
   render() {
@@ -44,6 +50,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
+  favMovieAction: () => dispatch(favMovieAction())
 })
 
 export default connect(
