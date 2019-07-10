@@ -15,3 +15,9 @@ const SideNavbar = (selected) => {
 }
 
 export default SideNavbar;
+
+
+// // <div className="sidenav">
+// <a exact={true} activeClassName='is-active' to='/'>Movies</a>
+// <a   activeClassName='is-active' to='/my-fav'>My Favorite</a>
+// </div>

@@ -19,3 +19,6 @@ We have to complete this cycle
 5) store will then trigger the render cycle of component who is subscribed to that data
 
 component -> action -> reducer -> store -> component
+
+
+
